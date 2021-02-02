@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var base_ships_1 = require("./base-ships");
+var starfighters_1 = require("./starfighters");
+var _ = require("lodash");
+console.log(_.pad("Typescript Examples", 50, "="));
+var ship = new base_ships_1.Spacecraft("Mediumdrive");
+var falcon = new starfighters_1.MillenniumFalcon;
+ship.jumpIntoHyperspace();
+falcon.jumpIntoHyperspace();

@@ -1,0 +1,98 @@
+0. Quantas cores diferentes cada formato suporta?
+
+R.: JPEG: 8-bit em escala cinza e 24-bit em escala colorida (16.7 milhões de cores)
+GIF: 8-bit em escala colorida (256 cores)
+PNG: 8-bit a 24-bit em escala colorida (256 a 16.7 milhões de cores)
+BMP: 3 bytes de RGB = 24-bit em escala colorida (16.7 milhões de cores)
+
+1. Qual destes formatos suporta animação?
+
+R.: Apenas o formato GIF
+
+2. Qual é a diferença entre a compressão com perdas e sem perdas?
+
+R.: Compressão sem perdas preserva cada um dos bits e bytes de uma extensão de arquivo para outra.
+Compressão com perdas já usa aproximação incerta para compactar de uma extensão de maior tamanho para outra,
+de menor tamanho.
+
+3. Qual destes formatos é comprimido com perdas?
+
+R.: Apenas o formato JPEG
+
+4. O que acontece, tecnicamente falando, quando um arquivo é removido de um sistema de arquivos FAT?
+
+R.: Ao remover um arquivo de um sistema de arquivos FAT, o arquivo não é removido de forma completa,
+apenas seu endereço é demarcado como "VAZIO", entretanto é possível acessá-lo novamente se seu endereço
+for descoberto novamente.
+
+5. O que alguém como você pode fazer para garantir (com alta probabilidade) que os arquivos que você excluir
+não poderão ser recuperados?
+
+R.: O melhor jeito é sobrescrever os dados do endereço do arquivo removido, pois seu endereço terá um
+novo conteúdo, tornando o conteúdo anterior irrecuperável 
+(obs.: existe um comando deste tipo no Linux chamado de 'shred').
+
+6. O que é stdint.h?
+
+R.: stdint.h é um header de programação em C responsável por introduzir uma definição de tipos (typedef) que
+podem especificar tamanhos específicos de inteiros (integers) para uso convencional em código.
+
+7. Por que se usa uint8_t, uint32_t, int32_t e uint16_t em um programa?
+
+R.: uintX_t significa alocação de tipo inteiro exclusivamente positivo (unsigned) de tamanho X, portanto:
+uint8_t = unsigned char = BYTE
+int32_t = long = LONG
+uint32_t = unsigned int = DWORD
+uint16_t = unsigned short = WORD
+
+8. Quanto bytes tem um BYTE, uma DWORD, um LONG e uma WORD, respectivamente?
+
+R.: Respectivamente, 1, 4, 4 e 2 bytes.
+
+9. O que (em ASCII, decimal ou hexadecimal) devem ser os dois primeiros bytes de qualquer arquivo BMP?
+
+R.: Os dois primeiros bytes são utilizados para determinar o formato de arquivo BMP, como se fosse sua
+assinatura, portanto eles devem ser hexadecimais.
+
+10. Qual é a diferença entre bfSize e biSize?
+
+R.: bfSize é o tamanho, em bytes, do arquivo BMP, enquanto que biSize é o tamanho, em bytes, da estrutura.
+
+11. O que significa se biHeight for negativo?
+
+R.: Quando biHeight é positivo, situar a origem da estrutura BMP no canto inferior-esquerdo, pois o bitmap é
+um DIB de baixo para cima.
+Quando é negativo, situar a origem da estrutura BMP no canto superior-esquerdo, pois o bitmap é um DIB de
+cima para baixo.
+
+12. Que campo em BITMAPINFOHEADER especifica a cor do BMP (bits por pixel)?
+
+R.: O campo biBitCount, que especifica o número de cores do BMP.
+
+13. Por que fopen pode retornar NULL em copy.c:32?
+
+R.: fopen na linha 32 de copy.c pode tentar realizar uma abertura de um arquivo inexistente, o que resulta em
+um valor nulo no endereço do ponteiro de arquivo.
+
+14. Porque é que o terceiro argumento de fread é sempre 1 em nosso código?
+
+R.: O terceiro argumento de fread corresponde à quantidade de elementos que o comando deve ler, em nosso caso,
+é sempre 1 pois ele deve ler apenas uma vez um elemento com o tamanho de dados das structs determinadas em
+bmp.h.
+
+15. Qual o valor que copy.c:69 atribui a padding se bi.biWidth é 3?
+
+R.: O valor que padding adquire é 4.
+
+16. O que é que fseek faz?
+
+R.: fseek é um comando que especifica a posição da memória do arquivo em que um ponteiro de arquivo deve se
+localizar, atuando como um cursor.
+
+17. O que é SEEK_CUR?
+
+R.: SEEK_CUR é a posição atual em memória do ponteiro de arquivo.
+
+18. Quem fez isso? E onde? Com que arma?
+
+R.: "It was Professor Plum in the lounge with the candlestick"
