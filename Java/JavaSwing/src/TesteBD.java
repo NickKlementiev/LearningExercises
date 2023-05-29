@@ -4,7 +4,7 @@ public class TesteBD {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
         System.out.println("Driver loaded");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/faculdade", "atikin", "zymm4fsq");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/faculdade", "user", "password");
         System.out.println("Database is working");
 
         String query = "select A.Matricula, A.Nome, A.DataNasc, A.CodCurso, C.NomeCurso, A.CodDisc, D.NomeDisc, A.NP1, A.NP2, A.Media, A.Faltas\n" +
