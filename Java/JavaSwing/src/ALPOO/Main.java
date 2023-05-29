@@ -14,8 +14,8 @@ public class Main extends JFrame {
     String url = "jdbc:mysql://localhost/faculdade";
     // Observação: alterar os valores de login e password
     // conforme os parâmetros do banco de dados da máquina a ser utilizada
-    String login = "atikin";
-    String password = "zymm4fsq";
+    String login = "user";
+    String password = "password";
 
     //--Configuração do menu do programa--//
     JMenuBar menuBar = new JMenuBar();
